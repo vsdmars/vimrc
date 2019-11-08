@@ -20,7 +20,7 @@ set formatoptions+=j
 " Indent Guides
 " http://goo.gl/qfF9od
 " http://www.vim.org/scripts/script.php?script_id=3361
-let g:indent_guides_guide_size=1
+let g:indent_guides_guide_size = 1
 setlocal colorcolumn=80
 hi ColorColumn ctermbg=lightblue guibg=blue
 
@@ -75,7 +75,7 @@ set shellpipe=>
 
 " https://github.com/thaerkh/vim-workspace
 let g:workspace_session_name = '.session.vim'
-let g:workspace_undodir='.vimundo'
+let g:workspace_undodir = '.vimundo'
 let g:workspace_persist_undo_history = 1
 let g:workspace_autosave_untrailspaces = 0
 
@@ -84,17 +84,19 @@ let g:skipview_files = ['*\.vim']
 set viewoptions=cursor,folds,slash,unix
 
 " https://github.com/ntpeters/vim-better-whitespace
-let g:better_whitespace_ctermcolor='red'
-let g:better_whitespace_enabled=1
+let g:better_whitespace_ctermcolor = 'red'
+let g:better_whitespace_enabled = 1
 " let ale plug in do this
-let g:strip_whitespace_on_save=0
+let g:strip_whitespace_on_save = 0
 
 " https://github.com/scrooloose/nerdtree
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-
+" https://github.com/rbgrouleff/bclose.vim
+let g:bclose_no_plugin_maps = 1
+let g:no_plugin_maps = 1
 
 " **************************
 " Function

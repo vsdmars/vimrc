@@ -45,7 +45,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 " Buffer related
 " **************************
 Plug 'vim-scripts/BufOnly.vim'
-
+Plug 'rbgrouleff/bclose.vim'
 
 
 " **************************
