@@ -6,7 +6,7 @@ set backspace=indent,eol,start
 " set diffopt+=internal,algorithm:patience
 set nomodeline
 " Work nicely with the system clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 " Number formats, for incrementing
 set nrformats=alpha,octal,hex
 " Use a short timeout for incomplete mappings

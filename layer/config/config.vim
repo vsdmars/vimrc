@@ -5,7 +5,7 @@ set tabstop=4
 
 set autoread		    " auto read when file is changed from outside
 set copyindent          " copy the previous indentation on autoindenting
-set clipboard=unnamed   " yank to the system register (*) by default
+" set clipboard=unnamed   " yank to the system register (*) by default
 set directory=/tmp
 set foldmethod=indent
 set foldlevel=99
