@@ -9,7 +9,16 @@ set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=15
 
+" https://github.com/Shougo/deoplete.nvim
+" Use ALE and also some plugin 'foobar' as completion sources for all code.
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
+let g:deoplete#enable_at_startup = 1
+
 " https://github.com/dense-analysis/ale#usage-linting
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_enabled = 0
 let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
@@ -17,19 +26,20 @@ let g:ale_fixers = {
 \ }
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
+" let g:ale-lint-file
 " You can disable this option too
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
+let g:ale_lint_on_save = 1
 let g:ale_open_list = 1
 " This can be useful if you are combining ALE with
 " some other plugin which sets quickfix errors, etc.
-let g:ale_keep_list_window_open = 1
+let g:ale_keep_list_window_open = 0
 " debug with :ALEInfo
 " let g:ale_history_log_output = 1
 " https://stackoverflow.com/a/20934608
-let g:ale_set_loclist = 0  " local to window
-let g:ale_set_quickfix = 1  " global
+let g:ale_set_loclist = 1  " local to window
+let g:ale_set_quickfix = 0  " global
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
