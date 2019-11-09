@@ -17,14 +17,16 @@ command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
-let b:ale_linters = ['golangci-lint']
-" let g:ale_linters = {'go': ['gometalinter']}
 let b:ale_fixers = ['goimports']
-let b:ale_go_golangci_lint_options = '-E nakedret -E prealloc -E maligned
-            \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports
-            \ -D deadcode -D structcheck'
+
+" let b:ale_linters = ['gometalinter']
+" let b:ale_go_gometalinter_options = '--fast'
+" let b:ale_go_gometalinter_lint_package = 0
+let b:ale_linters = ['golangci-lint']
+" let b:ale_go_golangci_lint_options = '-E nakedret -E prealloc -E maligned
+            " \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports
+            " \ -D deadcode -D structcheck'
 let b:ale_go_golangci_lint_package = 0
-let b:ale_go_gometalinter_lint_package = 0
 
 augroup CloseLoclistWindowGroupSetting
     autocmd!
