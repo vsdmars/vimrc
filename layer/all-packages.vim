@@ -24,13 +24,8 @@ call plug#begin('~/.vim/plugged')
     " use 'exe' due to s:package is a variable can only be evaluated at runtime.
       exe "source" s:package
     endif
-  endfor
-call plug#end()
 
-
-" Post-processing feature.
-" Adding every /after sub-dir into 'runtimepath' aka. 'rtp'
-for l in layers
+    " add path to runtime path
     let s:after = l . '/after'
     if !empty(glob(s:after))
         " https://stackoverflow.com/a/35617827
@@ -38,6 +33,13 @@ for l in layers
         exe "set rtp+=" . s:after
     endif
 
+  endfor
+call plug#end()
+
+
+" Post-processing feature.
+" Adding every /after sub-dir into 'runtimepath' aka. 'rtp'
+for l in layers
     " Load each layer's config
     let s:config = l . '/config.vim'
     if filereadable(s:config)
