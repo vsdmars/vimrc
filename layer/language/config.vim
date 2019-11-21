@@ -10,7 +10,10 @@ set completeopt=menu,menuone,longest
 set pumheight=15
 
 " https://github.com/dense-analysis/ale#usage-linting
+
+" below setting will enable C-x, C-o completion
 " set omnifunc=ale#completion#OmniFunc
+" set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 0
 let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
@@ -63,14 +66,19 @@ let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail',
     " \ 'smart_case': v:true,
 " \})
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#pointer = 1
+let g:deoplete#sources#go#cgo = 1
 
+" call deoplete#custom#option('sources', {
+" \ '_': ['ale'],
+" \})
 call deoplete#custom#option({
     \ 'auto_complete': v:true,
     \ 'auto_complete_delay': 10,
     \ 'camel_case': v:true,
     \ 'smart_case': v:true,
     \ })
-
 call deoplete#custom#source('ale', 'dup', v:true)
 
 " **************************
