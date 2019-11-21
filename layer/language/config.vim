@@ -9,15 +9,8 @@ set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=15
 
-" https://github.com/Shougo/deoplete.nvim
-" Use ALE and also some plugin 'foobar' as completion sources for all code.
-call deoplete#custom#option('sources', {
-\ '_': ['ale'],
-\})
-let g:deoplete#enable_at_startup = 1
-
 " https://github.com/dense-analysis/ale#usage-linting
-set omnifunc=ale#completion#OmniFunc
+" set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_enabled = 0
 let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
@@ -52,12 +45,24 @@ let g:ale_sign_priority = 100
 
 " https://github.com/majutsushi/tagbar
 " set focus to TagBar when opening it
-let g:tagbar_autofocus = 1
+let g:tagbar_autofocus = 0
 
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
 
+
+" https://github.com/Shougo/deoplete.nvim
+" Use ALE and also some plugin 'foobar' as completion sources for all code.
+call deoplete#custom#option('sources', {
+    \ '_': ['buffer'],
+    \ 'go': ['ale'],
+    \ 'auto_complete': v:true,
+    \ 'auto_complete_delay': 200,
+    \ 'camel_case': v:true,
+    \ 'smart_case': v:true,
+\})
+let g:deoplete#enable_at_startup = 1
 
 
 " **************************
