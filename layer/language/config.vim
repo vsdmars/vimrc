@@ -54,16 +54,24 @@ let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail',
 
 " https://github.com/Shougo/deoplete.nvim
 " Use ALE and also some plugin 'foobar' as completion sources for all code.
-call deoplete#custom#option('sources', {
-    \ '_': ['buffer'],
-    \ 'go': ['ale'],
-    \ 'auto_complete': v:true,
-    \ 'auto_complete_delay': 200,
-    \ 'camel_case': v:true,
-    \ 'smart_case': v:true,
-\})
+" call deoplete#custom#option('sources', {
+    " \ '_': ['buffer'],
+    " \ 'go': ['ale'],
+    " \ 'auto_complete': v:true,
+    " \ 'auto_complete_delay': 200,
+    " \ 'camel_case': v:true,
+    " \ 'smart_case': v:true,
+" \})
 let g:deoplete#enable_at_startup = 1
 
+call deoplete#custom#option({
+    \ 'auto_complete': v:true,
+    \ 'auto_complete_delay': 10,
+    \ 'camel_case': v:true,
+    \ 'smart_case': v:true,
+    \ })
+
+call deoplete#custom#source('ale', 'dup', v:true)
 
 " **************************
 " Function related
