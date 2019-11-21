@@ -54,32 +54,31 @@ let g:tagbar_autofocus = 0
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
 
+" https://stackoverflow.com/questions/24100896/vim-go-autocompletion-not-working
+" check who last updated omnifunc(vim-go is responsible for last update the setting):
+" :verbose setlocal omnifunc?
 
 " https://github.com/Shougo/deoplete.nvim
-" Use ALE and also some plugin 'foobar' as completion sources for all code.
-" call deoplete#custom#option('sources', {
-    " \ '_': ['buffer'],
-    " \ 'go': ['ale'],
-    " \ 'auto_complete': v:true,
-    " \ 'auto_complete_delay': 200,
-    " \ 'camel_case': v:true,
-    " \ 'smart_case': v:true,
-" \})
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#pointer = 1
-let g:deoplete#sources#go#cgo = 1
 
-" call deoplete#custom#option('sources', {
-" \ '_': ['ale'],
-" \})
+call deoplete#custom#option('sources', {
+    \ '_': ['buffer'],
+    \ 'go': ['vim-go'],
+\})
+
+call deoplete#custom#option('omni_patterns', {
+    \ 'go': '[^. *\t]\.\w*',
+\})
+
 call deoplete#custom#option({
     \ 'auto_complete': v:true,
     \ 'auto_complete_delay': 10,
     \ 'camel_case': v:true,
     \ 'smart_case': v:true,
     \ })
-call deoplete#custom#source('ale', 'dup', v:true)
+
+" do not use ale for auto completion due to vim-go uses gopls by default.
+" call deoplete#custom#source('ale', 'dup', v:true)
 
 " **************************
 " Function related

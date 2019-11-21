@@ -20,4 +20,5 @@ source $HOME/.vim/layer/all-packages.vim
 " filetype on
 " filetype plugin on
 " filetype indent on
+" this is NEEDED for auto completion to run
 filetype plugin indent on

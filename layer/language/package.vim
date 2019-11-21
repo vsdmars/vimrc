@@ -10,8 +10,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" do not use deoplete-go since it's using gocode
 " https://github.com/deoplete-plugins/deoplete-go
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 " **************************
 " Linter related

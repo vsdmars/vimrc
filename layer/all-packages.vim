@@ -15,6 +15,8 @@ let &wig = "_*"  " set wig option to _*
 let layers = globpath("~/.vim/layer", "*", 0, 1)
 let &wig = ""  " clear wig option
 
+" disable ale autocomplete
+let g:ale_completion_enabled = 0
 
 call plug#begin('~/.vim/plugged')
   for l in layers
