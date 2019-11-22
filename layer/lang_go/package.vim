@@ -6,3 +6,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " gJ (with the cursor on the first line of a block)
 "     to join a block into a single-line statement.
 Plug 'AndrewRadev/splitjoin.vim'
+
+" https://github.com/jodosha/vim-godebug
+Plug 'jodosha/vim-godebug'
